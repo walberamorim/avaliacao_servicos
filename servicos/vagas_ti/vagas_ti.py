@@ -64,10 +64,6 @@ servico = Flask("vagas_ti")
 def get():
     return Response(json.dumps(INFO), mimetype="application/json", status=200)
 
-@servico.get("/info")
-def get_info():
-    return Response(json.dumps(INFO), mimetype="application/json", status=200)
-
 @servico.get("/alive")
 def is_alive():
     return Response(ALIVE, mimetype="text/plain", status=200)
