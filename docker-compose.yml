@@ -1,0 +1,38 @@
+version: '3.1'
+
+services:
+  vagas_ti:
+    build: .
+    image: vagas
+    container_name: vagas_ti
+    hostname: vagas_ti
+    restart: always
+    volumes:
+      - ./servicos/vagas_ti:/servico
+    command: python3 /servico/vagas_ti.py
+    ports:
+      - "5001:5000"
+
+  vagas_saude:
+    build: .
+    image: vagas
+    container_name: vagas_saude
+    hostname: vagas_saude
+    restart: always
+    volumes:
+      - ./servicos/vagas_saude:/servico
+    command: python3 /servico/vagas_saude.py
+    ports:
+      - "5002:5000"
+
+  vagas_comercial:
+    build: .
+    image: vagas
+    container_name: vagas_comercial
+    hostname: vagas_comercial
+    restart: always
+    volumes:
+      - ./servicos/vagas_comercial:/servico
+    command: python3 /servico/vagas_comercial.py
+    ports:
+      - "5003:5000"
